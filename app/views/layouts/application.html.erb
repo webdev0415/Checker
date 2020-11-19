@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Idportal</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_packs_with_chunks_tag "tailwind" %>
+    <%= stylesheet_pack_tag "tailwind" %>
+  </head>
+
+  <body class="font-avenir-next-regular antialiased text-tint">
+    <%= render "layouts/shared/header" %>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash mb-7 p-4 text-center text-xs bg-tint-400 leading-tight <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <div class="container m-auto p-6">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/shared/footer" %>
+  </body>
+</html>

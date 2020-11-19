@@ -1,0 +1,29 @@
+<% button_label = group.new_record? ? "Submit Group" : "Save Changes" %>
+
+<div class="mt-4" style="max-width: 500px">
+  <h2 class="text-2xl font-avenir-next-bold">
+    <%= title %>
+  </h2>
+
+  <%= form_with(model: group, local: true) do |form| %>
+    <div class="mt-8">
+      <%= form.label :name, class: "block text-sm mb-1" %>
+      <%= form.text_field :name, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" %>
+      <%= error_message_for group, :name %>
+    </div>
+
+    <div class="mt-8">
+      <div class="flex items-center">
+        <%= form.check_box :enable_payment %>
+        <%= form.label :enable_payment, "Enable payment", class: "block text-sm ml-3" %>
+      </div>
+      <%= error_message_for group, :enable_payment %>
+    </div>
+
+    <div class="mt-8">
+      <%= form.submit button_label, class: "font-avenir-next-bold uppercase bg-navy text-white text-xs py-3 px-8 tracking-widest" %>
+    </div>
+  <% end %>
+</div>
+
+

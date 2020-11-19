@@ -1,0 +1,32 @@
+<%= form_for @resource do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :alert_count %>
+  <%= f.input :contact %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :phone %>
+  <%= f.input :current_fcra_count %>
+  <%= f.input :current_identity_count_a %>
+  <%= f.input :current_identity_count_b %>
+  <%= f.input :current_identity_count_c %>
+  <%= f.input :current_identity_count_e %>
+  <%= f.input :current_internal_user_count %>
+  <%= f.input :list_of_group_ids %>
+  <%= f.input :list_of_sentinel_profile %>
+  <%= f.input :list_of_sentry__id_profile %>
+  <%= f.input :list_of_sentry_risk_profile %>
+  <%= f.file_field :signed_agreement_pdf %>
+  <%= f.input :subscribe_fcra_count %>
+  <%= f.input :subscribe_internal_user_count %>
+  <%= f.input :subscribed_identity_count_a %>
+  <%= f.input :subscribed_identity_count_b %>
+  <%= f.input :subscribed_identity_count_c %>
+  <%= f.input :subscribed_identity_count_d %>
+
+  <%= f.fields_for :users do |u_form| %>
+    <%= u_form.email_field :email %>
+  <% end %>
+
+  <%= f.submit "Save", class: "btn btn-default" %>
+<% end %>

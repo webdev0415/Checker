@@ -1,0 +1,32 @@
+<div class="sm:justify-between sm:items-center sm:flex">
+  <h1 class="text-2xl font-avenir-next-bold">Organizations List</h1>
+</div>
+
+<div class="my-6 overflow-x-auto">
+  <table class="table-auto w-full border-collapse border-2 border-gray-500">
+    <thead>
+    <tr class="text-left">
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Name</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Address</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Contact</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Phone</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Start date</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @organizations.each do |organization| %>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= organization.name %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= organization.address %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= organization.contact %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= organization.phone %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= organization.start_date %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">
+          <%= link_to("View Identities", organization_identities_path(organization.id) ) %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

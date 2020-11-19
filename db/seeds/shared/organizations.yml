@@ -1,0 +1,21 @@
+records:
+  - sprig_id: organization_1
+    address: New york 450
+    contact: org_1@gmail.com
+    name: Space
+    phone: 754-3010
+    start_date: 10/01/2020
+
+  - sprig_id: organization_2
+    address: Monoral 350
+    contact: org_2@gmail.com
+    name: Google
+    phone: 564-3010
+    start_date: 10/04/2020
+
+  - sprig_id: organization_3
+    address: Monoral 350
+    contact: org_3@gmail.com
+    name: Linkedin
+    phone: 544-3010
+    start_date: 12/02/2020

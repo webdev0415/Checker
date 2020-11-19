@@ -1,0 +1,7 @@
+<%= form_for @resource do |f| %>
+  <%= f.text_field :email %>
+  <%= f.select :role, User.roles.keys, prompt: "Select" %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Save", class: "btn btn-default" %>
+<% end %>

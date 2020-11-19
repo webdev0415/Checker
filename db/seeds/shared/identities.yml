@@ -1,0 +1,27 @@
+records:
+  - sprig_id: identity_1
+    first_name: David
+    last_name: heinemeier
+    birth_day: "10/12/1980"
+    fcra_status: any
+    social_security_number: 7860123
+    group_id: "<%= sprig_record(Group, 'group_1').id %>"
+    government_file: '<%= sprig_file("dhh-id.jpg") %>'
+
+  - sprig_id: identity_2
+    first_name: Jeffrey
+    last_name: Way
+    birth_day: "10/01/1975"
+    fcra_status: any
+    social_security_number: 1810123
+    group_id: "<%= sprig_record(Group, 'group_1').id %>"
+    government_file: '<%= sprig_file("jeffrey-id.jpg") %>'
+
+  - sprig_id: identity_3
+    first_name: Kent
+    last_name: C. Dodds
+    birth_day: "10/01/1985"
+    fcra_status: any
+    social_security_number: 1810123
+    group_id: "<%= sprig_record(Group, 'group_2').id %>"
+    government_file: '<%= sprig_file("kent-id.png") %>'

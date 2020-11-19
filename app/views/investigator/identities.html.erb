@@ -1,0 +1,28 @@
+<div class="sm:justify-between sm:items-center sm:flex">
+  <h1 class="text-2xl font-avenir-next-bold">Identities List</h1>
+</div>
+
+<div class="my-6 overflow-x-auto">
+  <table class="table-auto md:table-fixed w-full border-collapse border-2 border-gray-500">
+    <thead>
+    <tr class="text-left">
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">First Name</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Last Name</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Birth day</th>
+      <th class="border border-gray-400 px-4 py-2 text-gray-800">Government issue id</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @identities.each do |identity| %>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= identity.first_name %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= identity.last_name %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800"><%= identity.birth_day %></td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">
+          <%= identity.government_issue_id.attached? ? image_tag(identity.government_issue_id, class: "object-cover w-2/3") : "-----" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

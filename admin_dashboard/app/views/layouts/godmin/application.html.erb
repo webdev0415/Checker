@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--  Assets -->
+    <%= stylesheet_link_tag File.join(engine_wrapper.namespaced_path, "application").gsub(/^\//, ""), media: "all" %>
+    <%= javascript_include_tag File.join(engine_wrapper.namespaced_path, "application").gsub(/^\//, "") %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="godmin-navbar-collapse">
+          <ul class="nav navbar-nav pull-left">
+            <a class="navbar-brand" href="/admin/">Origin Admin</a>
+          </ul>
+          <ul class="nav navbar-nav navbar-left pull-right">
+            <%= render partial: File.join(engine_wrapper.namespaced_path, "shared/navigation") %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <%= render "layouts/godmin/content" %>
+    </div>
+  </body>
+</html>

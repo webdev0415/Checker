@@ -1,0 +1,70 @@
+<div  class="mt-4 m-auto" style="max-width: 1100px">
+  <h2 class="text-2xl font-avenir-next-regular">
+    Identity Information
+  </h2>
+
+  <%= form_with(model: @signup_identity, url: signup_identities_path, local: true, html: { class: "flex" }) do |form| %>
+    <%= form.hidden_field :group_id %>
+    <div class="w-9/12 mr-20">
+      <div class="flex mt-8">
+        <div class="w-1/2 mr-10">
+          <%= form.label :first_name, "First Name", class: "block text-sm mb-1" %>
+          <%= form.text_field :first_name, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" %>
+          <%= error_message_for @signup_identity, :first_name %>
+        </div>
+
+        <div class="w-1/2">
+          <%= form.label :last_name, "Last Name",  class: "block text-sm mb-1" %>
+          <%= form.text_field :last_name, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" %>
+          <%= error_message_for @signup_identity, :last_name %>
+        </div>
+      </div>
+
+      <div class="flex mt-8">
+        <div class="w-1/2 mr-10">
+          <%= form.label :birth_day, "Date of Birth", class: "block text-sm mb-1" %>
+          <%= form.text_field :birth_day, placeholder:"DD/MM/YY", class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" %>
+          <%= error_message_for @signup_identity, :birth_day %>
+        </div>
+
+        <div class="w-1/2">
+          <%= form.label :social_security_number, "Social Security Number", class: "block text-sm mb-1" %>
+          <%= form.text_field :social_security_number, placeholder:"7869 |", class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" %>
+          <%= error_message_for @signup_identity, :social_security_number %>
+        </div>
+      </div>
+
+      <div class="flex items-center mt-8">
+        <div class="w-1/2 mr-10 overflow-hidden">
+          <%= form.label :government_issue_id, "Government issue id", class: "block text-sm mb-1" %>
+          <%= form.file_field :government_issue_id, class: "text-xs" %>
+          <%= error_message_for @signup_identity, :government_issue_id %>
+        </div>
+
+        <div class="w-1/2 text-xs mt-6 text-gray-500">
+          <p>only png, jpg, giff with max size of 5MB</p>
+        </div>
+      </div>
+
+      <div class="flex items-center mt-8">
+        <%= form.check_box :terms_and_conditions %>
+        <%= form.label :terms_and_conditions, "Terms & Conditions", class: "ml-4 text-sm text-blue-500" %>
+      </div>
+      <%= error_message_for @signup_identity, :terms_and_conditions %>
+    </div>
+
+    <div class="w-3/12 flex flex-col">
+      <p class="text-gray-500 text-micro mt-13">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt <br /><br />
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+        in voluptate velit esse <br /><br />
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum
+      </p>
+      <div class="submit-field mt-auto">
+        <%= form.submit "Submit", class: "font-avenir-next-bold uppercase bg-navy text-white text-xs py-3 px-10 tracking-widest" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+records:
+  - sprig_id: group_1
+    name: Engineers
+    url: 708bdbba6e40
+    organization_id: "<%= sprig_record(Organization, 'organization_1').id %>"
+
+  - sprig_id: group_2
+    name: Executives
+    url: 541bdbba6e40
+    organization_id: "<%= sprig_record(Organization, 'organization_2').id %>"
+
+  - sprig_id: group_3
+    name: Contractors
+    url: 541bdbba6e40
+    organization_id: "<%= sprig_record(Organization, 'organization_3').id %>"

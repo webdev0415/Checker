@@ -1,0 +1,32 @@
+<div class="sm:justify-between sm:items-center sm:flex">
+  <h1 class="text-2xl font-avenir-next-bold">Identities List</h1>
+</div>
+
+<div class="my-6 overflow-x-auto">
+  <table class="table-auto md:table-fixed w-full">
+    <thead>
+      <tr class="text-left">
+        <th class="border w-1/3 px-4 py-2">First Name</th>
+        <th class="border w-1/3 px-4 py-2">Last Name</th>
+        <th class="border w-1/3 px-4 py-2">Birth day</th>
+        <th class="border w-1/3 px-4 py-2">Government issue id</th>
+        <th class="border w-1/3 px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @identities.each do |identity| %>
+        <tr>
+          <td class="border px-4 py-2"><%= identity.first_name %></td>
+          <td class="border px-4 py-2"><%= identity.last_name %></td>
+          <td class="border px-4 py-2"><%= identity.birth_day %></td>
+          <td class="border px-4 py-2">
+            <%= identity.government_issue_id.attached? ? image_tag(identity.government_issue_id, class: "object-cover w-2/3") : "-----" %>
+          </td>
+          <td class="border px-4 py-2">
+            <%= link_to "Show", root_path, class: "mr-4" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

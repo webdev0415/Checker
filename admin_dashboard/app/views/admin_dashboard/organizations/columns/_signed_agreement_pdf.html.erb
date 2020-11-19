@@ -1,0 +1,9 @@
+<%=
+  resource.signed_agreement_pdf.attached? ?
+    link_to(
+      "View file",
+      Rails.application.routes.url_helpers.rails_blob_path(resource.signed_agreement_pdf, disposition: 'preview'),
+      { target: "_blank" }
+
+    ) : "-----"
+%>

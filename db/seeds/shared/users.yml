@@ -1,0 +1,34 @@
+records:
+  - sprig_id: user_1
+    email: superadmin@gmail.com
+    password: letmein1
+    role: superadmin
+
+  - sprig_id: user_2
+    email: admin@gmail.com
+    password: letmein1
+    role: admin
+
+  - sprig_id: user_3
+    email: investigator_1@gmail.com
+    password: letmein1
+    role: investigator
+
+  - sprig_id: user_4
+    email: organization_1@gmail.com
+    password: letmein1
+    role: organization
+    organization_id: "<%= sprig_record(Organization, 'organization_1').id %>"
+
+  - sprig_id: user_5
+    email: organization_2@gmail.com
+    password: letmein1
+    role: organization
+    organization_id: "<%= sprig_record(Organization, 'organization_2').id %>"
+
+  - sprig_id: user_6
+    email: organization_3@gmail.com
+    password: letmein1
+    role: organization
+    organization_id: "<%= sprig_record(Organization, 'organization_3').id %>"
+

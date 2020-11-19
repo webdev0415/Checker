@@ -1,0 +1,11 @@
+Welcome to Origin, <%= @user.email %>
+===============================================
+
+You have successfully added to <%= @organization.name %> organization,
+your username is: <%= @user.email %>.
+
+Your account is almost done, you just need to set up
+a <%= link_to "new password", edit_user_password_url(@user, token: @user.confirmation_token) %>.
+
+Thanks for joining and have a great day!
+

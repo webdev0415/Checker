@@ -1,0 +1,10 @@
+<h1>Welcome to Origin, <%= @user.email %></h1>
+<p>
+  You have been successfully added to <b><%= @organization.name %> organization</b>,
+  your <b>username</b> is: <%= @user.email %>.<br>
+</p>
+<p>
+  Your account is almost setup, you just need to finish setting
+  a <%= link_to "new password", edit_user_password_url(@user, token: @user.confirmation_token) %>.
+</p>
+<p>Don't hestitate to contact us with any questions</p>
