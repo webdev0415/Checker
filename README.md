@@ -1,5 +1,3 @@
-# ID-PORTAL
-
 # Run this project
 
 1. clone the repository
